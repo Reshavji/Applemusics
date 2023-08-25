@@ -42,7 +42,8 @@ function Music() {
   useEffect(() => {
     setLoading(true); // Set loading state when making a new API call
     fetchSongs();
-  }, [searchQuery,fetchSongs]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery]);
 
   if (loading) {
     return (
