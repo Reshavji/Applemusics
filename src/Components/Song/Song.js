@@ -18,7 +18,7 @@ function Song() {
     .then(data => {
       setSongData(data.data); // Store the fetched song data in the state
     });
-  }, []);
+  }, [id]);
 
   return (
     <div className='songs-player'>

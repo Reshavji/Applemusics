@@ -42,7 +42,7 @@ function Music() {
   useEffect(() => {
     setLoading(true); // Set loading state when making a new API call
     fetchSongs();
-  }, [searchQuery]);
+  }, [searchQuery,fetchSongs]);
 
   if (loading) {
     return (
