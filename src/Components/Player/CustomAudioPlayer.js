@@ -30,7 +30,7 @@ const CustomAudioPlayer = ({ currentSong }) => {
   useEffect(() => {
     const audio = audioRef.current;
     console.log(currentSong.songData)
-    if (audio && songarray.length > 0 && currentSong.title) {
+    if (audio && currentSong.title) {
       // Set initial song based on currentSong.link
       setIsPlaying(true);
       if (audioIndex === 0) {
@@ -46,7 +46,6 @@ const CustomAudioPlayer = ({ currentSong }) => {
         const progressPercentage = (currentTime / duration) * 100;
         setProgress(progressPercentage);
       };
-
       const handleAudioEnd = () => {
         if (isLoopOn) {
           audio.currentTime = 0;
@@ -59,7 +58,7 @@ const CustomAudioPlayer = ({ currentSong }) => {
           }
         }
       };
-
+    
       audio.addEventListener('timeupdate', updateProgress);
       if (isLoopOn) {
         audio.addEventListener('ended', handleAudioEnd);
@@ -86,15 +85,18 @@ const CustomAudioPlayer = ({ currentSong }) => {
       audioRef.current.currentTime = seekTime;
     }
   };
-
   const handleAudioEnd = () => {
     if (isLoopOn) {
       audioRef.current.currentTime = 0;
       audioRef.current.play();
     } else {
-      setAudioIndex((audioIndex + 1) % songarray.length); // Circular navigation
+      if (songarray && songarray.length > 0) {
+        setAudioIndex((audioIndex + 1) % songarray.length); // Circular navigation
+      }
     }
   };
+  
+
 
   const handlePlayPause = () => {
     if (audioRef.current.paused) {

@@ -8,7 +8,7 @@ import "./Header.css";
 import CustomAudioPlayer from "./Player/CustomAudioPlayer";
 import { auth } from "../Config/Firebase";
 import Login from "./Login";
-function Header({ currentSong,toggleSidebar }) {
+function Header({ currentSong,toggleSidebar,setCurrentSong }) {
   const [watchlist, setWatchlist] = useState([]);
   const [{ user }, dispatch] = useStateValue();
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -100,7 +100,16 @@ function Header({ currentSong,toggleSidebar }) {
           <div className="list-heading">Watchlist</div>
           <div className="watchlist-songs">
             {watchlist.map((song) => (
-              <div key={song._id} className="watchlist-song">
+              <div key={song._id} className="watchlist-song"  onDoubleClick={() =>
+                setCurrentSong({
+                  link: song.audio_url,
+                  image: song.image,
+                  title: song.title,
+                  songData: song,
+                  songId: song._id,
+                  allSong: null,
+                })
+              }>
                 <img
                   className="watchlist-song-image"
                   src={song.thumbnail}

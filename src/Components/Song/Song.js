@@ -18,18 +18,17 @@ function Song() {
     .then(data => {
       setSongData(data.data); // Store the fetched song data in the state
     });
-  }, [id]);
+  }, []);
 
   return (
     <div className='songs-player'>
       <div className='song-box'>
       <img src={songData.thumbnail} className="song-thumb" alt={songData.title} />
       <p className='song-title'>{songData.title}</p>
-      <div className="custom-audio-player">
-        <audio controls src={songData.audio_url}></audio>
+      {/* <div className="custom-audio-player">
+        <audio controls src={songData.audio_url} autoPlay></ audio>
+      </div> */}
       </div>
-      </div>
-      <CustomAudioPlayer />
     </div>
   );
 }

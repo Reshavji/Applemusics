@@ -36,13 +36,12 @@ const Home = () => {
           </div>
           <div className='item2'>
             <div className='header-flex'>
-            <Header currentSong={currentSong} toggleSidebar={toggleSidebar} />
+            <Header currentSong={currentSong} toggleSidebar={toggleSidebar} setCurrentSong={setCurrentSong} />
             </div>
             <div className='container-flex'>
             <Switch>
               <Route path="/Listen" component={Listennow} />
               <Route path="/browse" component={BrowseNow} />
-              <Route path="/radio" component={Music} />
               <Route path="/subscription" component={Subscription} />
               <Route path="/artist/:id" component={Artist} />
               <Route path="/song/:id" component={Song} />
@@ -50,6 +49,15 @@ const Home = () => {
                 path="/album/:id"
                 render={(props) => (
                   <AlbumDetails
+                    {...props}
+                    setCurrentSong={setCurrentSong}
+                  />
+                )}
+              />
+              <Route
+                path="/radio"
+                render={(props) => (
+                  <Music
                     {...props}
                     setCurrentSong={setCurrentSong}
                   />

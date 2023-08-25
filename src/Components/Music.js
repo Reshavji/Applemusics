@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import SpinnerSvg from '../images/Loader.svg'; // Import the SVG file
 import './Music.css';
 
-function Music() {
+function Music({setCurrentSong}) {
   const location = useLocation();
   const searchQuery = new URLSearchParams(location.search).get('search') || '';
 
@@ -79,8 +79,17 @@ function Music() {
         <div className='top-heading'><h1>Radio</h1></div>
         <Grid container spacing={2}>
           {songs.map((song) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={song._id}>
-              <Link to={`/song/${song._id}`} className="album-cards">
+            <Grid item xs={12} sm={6} md={4} lg={3} key={song._id} >
+              <Link to={`/song/${song._id}`} className="album-cards"  onClick={() =>
+                setCurrentSong({
+                  link: song.audio_url,
+                  image: song.image,
+                  title: song.title,
+                  songData: song,
+                  songId: song._id,
+                  allSong: null,
+                })
+              }>
                 <img src={song.thumbnail} alt={song.title} className="album-imgs" />
                 <h3 className='album-title'>{song.title}</h3>
                 <p>Artist: {song.artist.map((artist) => artist.name).join(', ')}</p>
