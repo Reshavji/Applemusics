@@ -1,0 +1,194 @@
+/* App.css */
+
+.form-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100vh;
+}
+.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.MuiPaper-elevation24.MuiPaper-rounded{
+  background-color: #222325;
+  max-height: 80% !important;
+    min-width: 55% !important;
+    padding: 10px;
+  border-radius: 10px;
+}
+
+.form-box {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+/* styles.css */
+
+.layout-onboarding-auth__apple-icon {
+  width: 60px; 
+  height: 60px;
+  fill: #ffffff; 
+  margin-bottom: 20px;
+}
+
+
+.form-heading {
+  margin-bottom: 50px;
+  font-size: 40px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  align-self: self-start;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.input-field {
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  border: 1px solid #3b3a3a;
+  background-color: #2a2a2d ;
+  color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.input-field :focus {
+  outline: none;
+  border-color: #8B5CF6;
+  box-shadow: 0 0 4px #8B5CF6;
+}
+.popup-btn{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: center;
+}
+.signup-link{
+  padding: 10px;
+}
+.submit-btn {
+  background-color: rgb(218, 15, 71);
+  color: #fff;
+  align-self: center;
+  padding: 13px 130px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #EC4899;
+}
+
+.submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px #8B5CF6;
+}
+
+.login {
+  align-items: center; 
+  overflow: hidden;
+  justify-content: center;
+  background-image: url("https://phoneky.co.uk/thumbs/wallpapers/2022/p2/abstract/20/wal4ab28.jpg");
+}
+.login__container {
+  margin: 20px;
+  display: flex;
+  font-size: 12px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.login__container > img {
+  object-fit: contain;
+  height: 8em;
+}
+.login__container > h1 {
+  color: #989898;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0.8em 0;
+}
+
+.login__container > button {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  border-radius: 2px;
+  color: #000;
+  margin: 0 0 1em 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  overflow: hidden;
+  outline: 0;
+  cursor: pointer;
+  text-align: center;
+  line-height: 36px;
+  width: 17em;
+  padding: 0.3em 1em;
+  transition: all 0.25s linear;
+  transform: scale(1);
+}
+.login__container > button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #4285f4;
+  display: block;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s linear;
+}
+.login__container > button:last-of-type::after {
+  background-color: #fff;
+}
+.login__container > button:hover::after,
+.login__container > button:focus::after {
+  transform: scaleX(1);
+}
+
+.login__google {
+  object-fit: contain;
+  height: 1.5em;
+  margin-right: 1em;
+}
+.login__googleBtn {
+  background-color: #fff;
+}
+.login__googleBtn > span {
+  font-weight: 600;
+  color: #302e2e;
+}
+.link-form{
+  color: rgb(218, 15, 71);
+  font-size: 16px;
+  cursor: pointer;
+}
+.link-form:hover{
+  text-decoration: underline;
+}
+.forgot-passwd{
+  color: rgb(218, 15, 71);
+}
+.forgot-passwd:hover{
+ text-decoration: underline;
+}

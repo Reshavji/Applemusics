@@ -1,0 +1,339 @@
+.header-container {
+  background-color: #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  z-index: 100;
+  padding: 0px 25px;
+}
+.header-img{
+  height: 100%;
+  width: 100%;
+}
+.header-items{
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: 55px;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.header-logo,.hamburger-icon{
+  display: none;
+}
+.css-b62m3t-container {
+  width: 95px;
+  margin-left: 15px;
+  display: inline;
+}
+
+.select {
+  width: 50px !important;
+}
+
+.header-icons {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 40px;
+  margin-right: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+#logo svg path {
+  fill: white;
+}
+
+.icon-container {
+  margin: auto;
+  display: flex;
+  width: 85%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.player-icon{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  color: #6e6e78;
+}
+
+.middle-player {
+  width: 100%;
+  height: 50px;
+  padding: 2px 60px;
+  display: flex;
+  flex-direction: row;
+}
+.apple-icon {
+  width: 30px; 
+  height: 30px;
+  fill: #c7bfbf; 
+}
+.player{
+  width: 80%;
+}
+.song-container{
+  display: flex;
+  align-items: center;
+  padding: 0px 5px;
+  border: 1px solid rgba(128, 128, 128, 0.285);
+  justify-content: center;
+}
+.song-icon {
+  height: 30px;
+  width: 30px;
+  background-image:-webkit-image-set(1);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.song-icon svg path {
+  fill: rgb(116, 114, 114); /* Change this color to the desired color */
+}
+.player-container {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  color: #bfbfc4;
+  align-items: center;
+  justify-content: center;
+  background-color: #505053;
+}
+
+Slider{
+  color: white;
+  border: 1ps solid red;
+}
+.list-icon {
+  display: flex;
+  flex-direction: row;
+  margin-right: 15px;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  color: #bfbfc4;
+}
+
+.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.MuiPaper-elevation24.MuiPaper-rounded {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  max-height: 70%;
+  min-width: 40%;
+  overflow: hidden;
+}
+
+/* Rest of your existing styles for the header... */
+
+.user-options {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+}
+
+.user-options a {
+  color: #333;
+  text-decoration: none;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.user-options a:hover {
+  background-color: #f0f0f0;
+}
+
+.logout-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  margin-top: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+/* Update the button style */
+button.login-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #dee6ef;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  background-color: #d60017;
+  padding: 4px 11px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjust the cart icon style */
+.cart-icon {
+  margin-right: 3px;
+}
+
+/* Style the button on hover */
+button.login-btn:hover {
+  background-color: #fa586a;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Style the button on hover */
+button.login-btn:hover {
+  background-color: #fa586a;
+}
+.slider-style {
+  appearance: none;
+  width: 100%;
+  color: rgb(255, 255, 255) !important;
+  height: 4px;
+  margin-left: 5px;
+  border-radius: 2px;
+  outline: none;
+}
+.watchlist-songs{
+  width: 100%;
+  display: flex;
+  padding: 15px 0px;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.watchlist-song{
+  display: flex;
+  border: 1px solid #2e2b2c;
+  color: #dee6ef;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #3c3c3c;
+  justify-content: space-around;
+  padding: 8px;
+}
+.watchlist-song-image{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.watchlist-remove-btn{
+  padding: 5px;
+  background-color: #e80822;
+  border: none;
+  border-radius: 5px;
+  color: #dee6ef;
+}
+/* Add a media query for mobile view */
+@media (max-width: 768px) {
+  /* Style for moving middle-player to the bottom */
+  .middle-player {
+    /* Add styles to position the middle-player at the bottom */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: #2d3134;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon-container,.list-icon{
+    display: none;
+  }
+  .player{
+    display: none;
+  }
+  .header-items{
+    display: flex;
+    
+    justify-content: space-between;
+  }
+  .header-logo{
+    display: flex;
+  }
+   .hamburger-icon{
+    display: block;
+    display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  color: #6e6e78;
+  }
+}
+
+/* Add this in your CSS file */
+.right-sidebar {
+  position: fixed;
+  right: -300px; /* Initially off-screen */
+  height: 100%;
+  width: 300px;
+  background-color: rgba(60, 57, 58, 0);
+  transition: right 0.3s ease-in-out;
+}
+
+/* Add this in your CSS file to show the sidebar when expanded */
+.sidebar.expanded-sidebar {
+  right: 0;
+}
+/* Add this in your CSS file */
+.expanded-sidebar {
+  position: fixed;
+  top: 54px;
+  right: 0;
+  overflow-y: scroll;
+  height: 100%;
+  width: 300px;
+  background-color: rgba(42, 41, 41, 0.674);
+  transition: width 0.3s ease-in-out;
+}
+.list-heading{
+  display: flex;
+  height: 60px;
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  color: #fa586a;
+  border-bottom: 2px solid whitesmoke;
+}

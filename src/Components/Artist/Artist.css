@@ -1,0 +1,67 @@
+/* Styling for the artist container */
+.artist-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color:#1f1f1f;
+    align-items: center;
+    color: #dee6ef ;
+    overflow-y: auto; /* Enable scrolling when content exceeds height */
+  }
+  .artist-box{
+    width: 100%;
+  }
+.artist-heading{
+    height: 400px;
+    color: #dee6ef ;
+    width: 100%;
+    display: flex;
+    background-color: #323232;
+    flex-direction: column;
+}
+.artist-image{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: auto;
+}
+.artist-detail{
+    display: flex;
+    color: #dee6ef ;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 20px;
+   
+    align-items: start;
+}
+.artist-lang{
+    width: 100%;
+    padding: 10px;
+    height:35px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.lang-title{
+    color: #dee6ef ;
+}
+.lang-name{
+    padding: 5px 5px;
+    color: #dee6ef ;
+    margin-left: 5px;
+    display: inline !important;
+    border-radius: 10px;
+    background-color:  #ec2139;
+    box-shadow: 0px 3px 6px rgba(168, 51, 137, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.lang-name:hover {
+    transform: translateY(2px);
+    cursor: pointer;;
+  }
+  .song-lists{
+    padding: 20px;
+    color: #dee6ef ;
+  }

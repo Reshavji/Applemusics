@@ -1,0 +1,45 @@
+/* CustomAudioPlayer.css */
+
+/* Style for the container of the custom audio player */
+.custom-audio-player {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .player-control{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+   text-align: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .song-data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  /* Style for the progress bar */
+  .progress-bar {
+    width: 100%;
+    height: 5px;
+    background-color: #ddd;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  .song-name{
+   position: absolute;
+   margin-top: 20px;
+  }
+  /* Style for the progress bar fill */
+  .progress {
+    height: 100%;
+    background-color: #007bff;
+    transition: width 0.1s linear;
+  }
+  .MuiSvgIcon-colorPrimary{
+    color: #fa586a !important;
+  }

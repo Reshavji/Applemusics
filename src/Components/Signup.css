@@ -1,0 +1,163 @@
+/* App.css */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #dee6ef;
+  height: 100vh;
+  
+}
+.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.MuiPaper-elevation24.MuiPaper-rounded{
+  background-color: #222325;
+  min-height: 100% !important;
+    min-width: 55% !important;
+    padding: 10px;
+  border-radius: 10px;
+}
+
+.form-box {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border-radius: 5px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #3b3a3a;
+  background-color: #2a2a2d ;
+  color: #dee6ef;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.input-field :focus {
+  outline: none;
+  border-color: #8B5CF6;
+  box-shadow: 0 0 4px #8B5CF6;
+}
+.popup-btn{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: center;
+}
+.submit-btn {
+  background-color: rgb(218, 15, 71);
+  color: #dee6ef;
+  align-self: center;
+  padding: 13px 130px;
+  border: none;
+  margin-top: 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #EC4899;
+}
+
+.submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px #8B5CF6;
+}
+
+.login {
+  align-items: center; 
+  overflow: hidden;
+  justify-content: center;
+  background-image: url("https://phoneky.co.uk/thumbs/wallpapers/2022/p2/abstract/20/wal4ab28.jpg");
+}
+.login__container {
+  margin: 20px;
+  display: flex;
+  font-size: 12px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.login__container > img {
+  object-fit: contain;
+  height: 8em;
+}
+.login__container > h1 {
+  color: #dee6ef;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0.8em 0;
+}
+
+.login__container > button {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  border-radius: 2px;
+  color: #000;
+  margin: 0 0 1em 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  overflow: hidden;
+  outline: 0;
+  cursor: pointer;
+  text-align: center;
+  line-height: 36px;
+  width: 17em;
+  padding: 0.3em 1em;
+  transition: all 0.25s linear;
+  transform: scale(1);
+}
+.login__container > button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #4285f4;
+  display: block;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.select-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #dee6ef;
+  font-size: 14px;
+  background-color: #2a2a2d ;
+}
+/* Style for the select options */
+.select-field option {
+  font-size: 14px;
+}
+.input-box{
+  width: 500px;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+}
