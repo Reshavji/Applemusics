@@ -20,7 +20,13 @@ function Header({ currentSong,toggleSidebar,setCurrentSong }) {
     if (storedWatchlist) {
       setWatchlist(JSON.parse(storedWatchlist));
     }
+  }, []);
+  
+  // Add another useEffect to update local storage when the watchlist state changes
+  useEffect(() => {
+    localStorage.setItem("watchlist", JSON.stringify(watchlist));
   }, [watchlist]);
+  
 
   const handleRemoveFromWatchlist = (song) => {
     const updatedWatchlist = watchlist.filter((item) => item !== song);
@@ -67,7 +73,6 @@ function Header({ currentSong,toggleSidebar,setCurrentSong }) {
   const handleUserOptionsMouseLeave = () => {
     setShowUserOptions(false);
   };
-
   return (
     <div className="header-container">
       <div className="header-items">

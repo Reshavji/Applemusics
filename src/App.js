@@ -11,6 +11,7 @@ function App() {
   const [, dispatch] = useStateValue();
 
   useEffect(() => {
+    
     const fetchUserData = async (userId) => {
       try {
         const userDoc = await db.collection('users').doc(userId).get();

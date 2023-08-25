@@ -8,6 +8,7 @@ const AlbumDetails = ({ setCurrentSong }) => {
   const [songSources, setSongSources] = useState([]); // Store song sources
   const [watchlist, setWatchlist] = useState([]);
   useEffect(() => {
+    
     // Fetch album details using the album ID from the route parameters
     fetch(`https://academics.newtonschool.co/api/v1/music/album/${id}`, {
       headers: {

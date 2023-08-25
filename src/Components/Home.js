@@ -44,7 +44,6 @@ const Home = () => {
               <Route path="/browse" component={BrowseNow} />
               <Route path="/subscription" component={Subscription} />
               <Route path="/artist/:id" component={Artist} />
-              <Route path="/song/:id" component={Song} />
               <Route
                 path="/album/:id"
                 render={(props) => (
@@ -58,6 +57,15 @@ const Home = () => {
                 path="/radio"
                 render={(props) => (
                   <Music
+                    {...props}
+                    setCurrentSong={setCurrentSong}
+                  />
+                )}
+              />
+              <Route
+                path="/song/:id"
+                render={(props) => (
+                  <Song
                     {...props}
                     setCurrentSong={setCurrentSong}
                   />

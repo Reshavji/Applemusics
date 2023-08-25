@@ -28,8 +28,8 @@ const CustomAudioPlayer = ({ currentSong }) => {
   };
  
   useEffect(() => {
+    
     const audio = audioRef.current;
-    console.log(currentSong.songData)
     if (audio && currentSong.title) {
       // Set initial song based on currentSong.link
       setIsPlaying(true);
@@ -48,16 +48,15 @@ const CustomAudioPlayer = ({ currentSong }) => {
       };
       const handleAudioEnd = () => {
         if (isLoopOn) {
-          audio.currentTime = 0;
-          audio.play();
+          audioRef.current.currentTime = 0;
+          audioRef.current.play();
         } else {
-          if (audioIndex === 0) {
-            setAudioIndex(1);
-          } else {
+          if (songarray && Array.isArray(songarray) && songarray.length > 0) {
             setAudioIndex((audioIndex + 1) % songarray.length); // Circular navigation
           }
         }
       };
+      
     
       audio.addEventListener('timeupdate', updateProgress);
       if (isLoopOn) {
@@ -71,6 +70,7 @@ const CustomAudioPlayer = ({ currentSong }) => {
         }
       };
     }
+  
      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [audioIndex, songarray, isLoopOn, currentSong.link]);
   
@@ -107,35 +107,76 @@ const CustomAudioPlayer = ({ currentSong }) => {
       setIsPlaying(false);
     }
   };
-
   const handleShuffle = () => {
-    setIsShuffleOn(!isShuffleOn);
-    const newIndex = isShuffleOn ? audioIndex : Math.floor(Math.random() * songarray.length);
-    setAudioIndex(newIndex);
+    if (songarray && songarray.length > 0) {
+      setIsShuffleOn(!isShuffleOn);
+      const newIndex = isShuffleOn ? audioIndex : Math.floor(Math.random() * songarray.length);
+      setAudioIndex(newIndex);
+    }
   };
+  
 
   const handleLoop = () => {
     setIsLoopOn(!isLoopOn);
-    if (isLoopOn) {
-      audioRef.current.removeEventListener('ended', handleAudioEnd);
-    } else {
-      audioRef.current.addEventListener('ended', handleAudioEnd);
+    if (audioRef.current) {
+      if (isLoopOn) {
+        audioRef.current.removeEventListener('ended', handleAudioEnd);
+      } else {
+        audioRef.current.addEventListener('ended', handleAudioEnd);
+      }
     }
   };
+  
 
   return (
     <div className="icon-container">
-   <div className="player-icon">
-        <ShuffleIcon fontSize="small" onClick={handleShuffle} color={isShuffleOn ? "primary" : "inherit"} />
-        <FastRewindIcon fontSize="large" onClick={() => setAudioIndex((audioIndex - 1 + songarray.length) % songarray.length)} />
-        {isPlaying ? (
-          <PauseIcon fontSize="large" onClick={handlePlayPause} />
-        ) : (
-          <PlayArrowIcon fontSize="large" onClick={handlePlayPause} />
-        )}
-        <FastForwardIcon fontSize="large" onClick={() => setAudioIndex((audioIndex + 1) % songarray.length)} />
-        <LoopIcon fontSize="small" onClick={handleLoop} color={isLoopOn ? "primary" : "inherit"} />
-      </div>
+  <div className="player-icon">
+  <ShuffleIcon
+    fontSize="small"
+    onClick={handleShuffle}
+    color={isShuffleOn ? "primary" : "inherit"}
+    disabled={isShuffleOn === null}
+  />
+  <FastRewindIcon
+    fontSize="large"
+    onClick={() => {
+      const newIndex =
+        (audioIndex - 1 + (songarray && songarray.length ? songarray.length : 0)) %
+        (songarray && songarray.length ? songarray.length : 1);
+      setAudioIndex(newIndex);
+    }}
+    disabled={!songarray || audioIndex === null}
+  />
+  {isPlaying !== null ? (
+    isPlaying ? (
+      <PauseIcon fontSize="large" onClick={handlePlayPause} />
+    ) : (
+      <PlayArrowIcon fontSize="large" onClick={handlePlayPause} />
+    )
+  ) : (
+    <PlayArrowIcon fontSize="large" onClick={handlePlayPause} disabled />
+  )}
+  {songarray && Array.isArray(songarray) && songarray.length > 0 ? (
+    <FastForwardIcon
+      fontSize="large"
+      onClick={() => {
+        const newIndex = (audioIndex + 1) % songarray.length;
+        setAudioIndex(newIndex);
+      }}
+      disabled={!songarray || audioIndex === null}
+    />
+  ) : (
+    <FastForwardIcon fontSize="large" disabled />
+  )}
+  <LoopIcon
+    fontSize="small"
+    onClick={handleLoop}
+    color={isLoopOn ? "primary" : "inherit"}
+    disabled={isLoopOn === null}
+  />
+</div>
+
+
     <div className="middle-player">
       <div className="song-container">
         <div className="song-icon">
