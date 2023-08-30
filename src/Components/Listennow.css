@@ -55,4 +55,8 @@
     .main-para {
         width: 90%; /* Adjust this width as needed for smaller screens */
     }
+    .heading {
+        font-size: 1rem;
+        padding: 0px 10px;
+    }
 }
