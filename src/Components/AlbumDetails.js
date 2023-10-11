@@ -40,13 +40,16 @@ const AlbumDetails = ({ setCurrentSong }) => {
     setSongSources(sources);
   };
   const handleAddToWatchlist = (song) => {
-    if (!watchlist.includes(song)) {
-      const updatedWatchlist = [...watchlist, song];
-      setWatchlist(updatedWatchlist);
-      localStorage.setItem("watchlist", JSON.stringify(updatedWatchlist)); // Update local storage
-      console.log("Song added to watchlist:", song.title);
-    }
-  };
+  if (!watchlist.includes(song)) {
+    const updatedWatchlist = [...watchlist, song];
+    setWatchlist(updatedWatchlist);
+    localStorage.setItem("watchlist", JSON.stringify(updatedWatchlist)); // Update local storage
+    console.log("Song added to watchlist:", song.title);
+  } else {
+    console.log("Song already in watchlist:", song.title);
+  }
+};
+
   const handleRemoveFromWatchlist = (song) => {
     const updatedWatchlist = watchlist.filter((item) => item !== song);
     setWatchlist(updatedWatchlist);
